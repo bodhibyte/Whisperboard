@@ -14,7 +14,7 @@ let package = Package(
 
     .package(url: "https://github.com/aheze/Popovers.git", from: "1.3.2"),
     .package(url: "https://github.com/aheze/VariableBlurView.git", from: "1.0.0"),
-    .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.4.3"),
+
     .package(url: "https://github.com/apple/swift-async-algorithms.git", from: "1.0.0"),
     .package(url: "https://github.com/AudioKit/AudioKit.git", from: "5.6.0"),
     .package(url: "https://github.com/dmrschmidt/DSWaveformImage.git", from: "14.2.2"),

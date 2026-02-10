@@ -1,7 +1,7 @@
 import Common
 @_spi(Presentation) import ComposableArchitecture
 import Inject
-import Lottie
+
 import Popovers
 import SwiftUI
 
@@ -43,7 +43,7 @@ struct SubscriptionSectionView: View {
   @Perception.Bindable var store: StoreOf<SubscriptionSection>
 
   @State var sectionSize: CGSize = .zero
-  @State var playbackMode = LottiePlaybackMode.paused(at: .progress(0))
+
 
   var body: some View {
     WithPerceptionTracking {
@@ -52,17 +52,17 @@ struct SubscriptionSectionView: View {
       } label: {
         VStack(alignment: .leading, spacing: .grid(2)) {
           #if APPSTORE
-            LottieView(animation: AnimationAsset.wiredGradient407CrownKingLord.animation)
-              .resizable()
-              .playbackMode(playbackMode)
-              .animationDidFinish { _ in
-                playbackMode = .paused(at: .progress(0))
-              }
-              .frame(width: 30, height: 30)
-              .padding(.grid(1))
-              .background {
-                Circle().fill(Color.DS.neutral07100)
-              }
+//            LottieView(animation: AnimationAsset.wiredGradient407CrownKingLord.animation)
+//              .resizable()
+//              .playbackMode(playbackMode)
+//              .animationDidFinish { _ in
+//                playbackMode = .paused(at: .progress(0))
+//              }
+//              .frame(width: 30, height: 30)
+//              .padding(.grid(1))
+//              .background {
+//                Circle().fill(Color.DS.neutral07100)
+//              }
           #endif
 
           VStack(alignment: .leading, spacing: .grid(1)) {
@@ -96,10 +96,10 @@ struct SubscriptionSectionView: View {
               }
 
             #if APPSTORE
-              LottieView(animation: AnimationAsset.wiredOutline225Arrow14.animation)
-                .resizable()
-                .playbackMode(playbackMode)
-                .frame(width: 30, height: 30)
+//              LottieView(animation: AnimationAsset.wiredOutline225Arrow14.animation)
+//                .resizable()
+//                .playbackMode(playbackMode)
+//                .frame(width: 30, height: 30)
             #endif
           }
           .padding(.vertical, .grid(1))
@@ -117,21 +117,11 @@ struct SubscriptionSectionView: View {
         .readSize { sectionSize = $0 }
         .continuousCornerRadius(.grid(4))
       }
-      .trySubscriptionButtonStyle(playbackMode: $playbackMode)
+      .trySubscriptionButtonStyle()
       .sheet(item: $store.scope(state: \.details, action: \.details)) { store in
         SubscriptionDetailsView(store: store)
       }
-      .onAppear {
-        playbackMode = .playing(.fromProgress(0, toProgress: 1, loopMode: .playOnce))
-      }
-      .task {
-        try? await Task {
-          while !Task.isCancelled {
-            try await Task.sleep(seconds: 5)
-            playbackMode = .playing(.fromProgress(0, toProgress: 1, loopMode: .playOnce))
-          }
-        }.value
-      }
+
       .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
       .listRowBackground(Color.clear)
       .listRowSeparator(.hidden)
@@ -197,7 +187,6 @@ public extension View {
 // MARK: - TrySubscriptionButtonStyle
 
 struct TrySubscriptionButtonStyle: ButtonStyle {
-  @Binding var playbackMode: LottiePlaybackMode
   @State var feedbackGenerator = UISelectionFeedbackGenerator()
 
   func makeBody(configuration: Self.Configuration) -> some View {
@@ -213,9 +202,7 @@ struct TrySubscriptionButtonStyle: ButtonStyle {
       .shiningCard(defaultDegrees: 3, triggerDegrees: -8, isTapped: .constant(configuration.isPressed))
       .shadow(color: Color.DS.Shadow.accent.opacity(0.4), radius: 35, x: 0, y: 20)
       .onChange(of: configuration.isPressed) { isPressed in
-        if isPressed {
-          playbackMode = .playing(.fromProgress(0, toProgress: 1, loopMode: .playOnce))
-        }
+
         feedbackGenerator.selectionChanged()
       }
       .animation(.gentleBounce(), value: configuration.isPressed)
@@ -223,8 +210,8 @@ struct TrySubscriptionButtonStyle: ButtonStyle {
 }
 
 extension View {
-  func trySubscriptionButtonStyle(playbackMode: Binding<LottiePlaybackMode>) -> some View {
-    buttonStyle(TrySubscriptionButtonStyle(playbackMode: playbackMode))
+  func trySubscriptionButtonStyle() -> some View {
+    buttonStyle(TrySubscriptionButtonStyle())
   }
 }
 
