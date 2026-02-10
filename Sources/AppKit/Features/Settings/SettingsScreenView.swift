@@ -122,8 +122,14 @@ struct SpeechSectionView: View {
           )
 
           SettingsSheetButton(icon: .system(name: "ladybug", background: .systemGreen), title: "Show logs") {
-            NavigationStack {
-              ConsoleView(store: .shared)
+            if #available(iOS 16, *) {
+              NavigationStack {
+                ConsoleView(store: .shared)
+              }
+            } else {
+              NavigationView {
+                ConsoleView(store: .shared)
+              }
             }
           }
 

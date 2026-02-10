@@ -155,7 +155,7 @@ private actor RecordingTranscriptionStreamContainer {
       let state = await transcriptionStream.state.modelState
       logs.debug("Model loading progress: \(progress * 100)% state: \(state)")
       progressCallback(Double(progress))
-      try? await Task.sleep(for: .seconds(0.3))
+      try? await Task.sleep(nanoseconds: 300_000_000)
     } while await transcriptionStream.state.modelState != .loaded
 
     logs.debug("Model \(model) loaded successfully")

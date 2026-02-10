@@ -1,0 +1,56 @@
+name: iOS Build
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install mise
+        run: |
+          curl https://mise.jdx.dev/install.sh | sh
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          
+      - name: Install Dependencies
+        run: |
+          /Users/runner/.local/bin/mise install
+        
+      - name: Generate Project
+        run: |
+          /Users/runner/.local/bin/mise x tuist -- install
+          /Users/runner/.local/bin/mise x tuist -- generate --no-open
+        env:
+            # CI environment variables if needed
+            TUIST_CI: 1
+        
+      - name: Build Unsigned App
+        run: |
+          # Build specifically for iOS Device (arm64)
+          xcodebuild build \
+            -workspace WhisperBoard.xcworkspace \
+            -scheme WhisperBoard \
+            -destination "generic/platform=iOS" \
+            -configuration Release \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            SYMROOT=${{ github.workspace }}/build
+            
+      - name: Package IPA
+        run: |
+          mkdir Payload
+          # Copy the .app bundle into Payload
+          cp -r build/Release-iphoneos/WhisperBoard.app Payload/
+          # Zip it into an IPA
+          zip -r WhisperBoard.ipa Payload
+          
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: WhisperBoard-IPA
+          path: WhisperBoard.ipa

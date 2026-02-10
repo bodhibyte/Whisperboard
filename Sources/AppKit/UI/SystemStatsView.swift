@@ -1,6 +1,8 @@
 // Taken from https://github.com/argmaxinc/swift-system-stats/blob/main/SystemStats/StatisticsView.swift
 
+#if canImport(Charts)
 import Charts
+#endif
 import Combine
 import MachO
 import os
@@ -62,42 +64,46 @@ struct StatisticsView: View {
   var body: some View {
     NavigationView {
       List {
-        Section(header: Text("Memory Chart")) {
-          Chart {
-            ForEach(memoryStats, id: \.timestamp) { stat in
-              LineMark(
-                x: .value("Timestamp", stat.timestamp, unit: .second),
-                y: .value("Bytes", stat.value)
-              )
-              .foregroundStyle(by: .value("Type", stat.category))
-              .interpolationMethod(.cardinal)
+        if #available(iOS 16.0, *) {
+          Section(header: Text("Memory Chart")) {
+            #if canImport(Charts)
+            Chart {
+              ForEach(memoryStats, id: \.timestamp) { stat in
+                LineMark(
+                  x: .value("Timestamp", stat.timestamp, unit: .second),
+                  y: .value("Bytes", stat.value)
+                )
+                .foregroundStyle(by: .value("Type", stat.category))
+                .interpolationMethod(.cardinal)
+              }
+              if showTotalMemory {
+                RuleMark(
+                  y: .value("Total", totalDeviceMemoryBytes)
+                )
+                .lineStyle(StrokeStyle(lineWidth: 2))
+                .foregroundStyle(.red)
+              }
             }
-            if showTotalMemory {
-              RuleMark(
-                y: .value("Total", totalDeviceMemoryBytes)
-              )
-              .lineStyle(StrokeStyle(lineWidth: 2))
-              .foregroundStyle(.red)
+            .chartForegroundStyleScale([
+              "Free": .green, "Active": .blue, "Inactive": .orange, "Wired": .purple, "Compressed": .red,
+            ])
+            .chartXAxis {
+              AxisMarks(preset: .aligned, position: .bottom)
             }
-          }
-          .chartForegroundStyleScale([
-            "Free": .green, "Active": .blue, "Inactive": .orange, "Wired": .purple, "Compressed": .red,
-          ])
-          .chartXAxis {
-            AxisMarks(preset: .aligned, position: .bottom)
-          }
-          .chartYAxis {
-            AxisMarks(preset: .aligned, position: .trailing) { value in
-              AxisGridLine()
+            .chartYAxis {
+              AxisMarks(preset: .aligned, position: .trailing) { value in
+                AxisGridLine()
 
-              let bytesValue = value.as(Double.self) ?? 0.0
-              let formattedValue = formattedBytes(bytesValue)
-              AxisValueLabel(formattedValue)
+                let bytesValue = value.as(Double.self) ?? 0.0
+                let formattedValue = formattedBytes(bytesValue)
+                AxisValueLabel(formattedValue)
+              }
             }
-          }
-          .frame(height: 300)
+            .frame(height: 300)
+            #endif
 
-          Toggle("Show Total", isOn: $showTotalMemory.animation())
+            Toggle("Show Total", isOn: $showTotalMemory.animation())
+          }
         }
 
         Section(header: Text("Memory Information")) {

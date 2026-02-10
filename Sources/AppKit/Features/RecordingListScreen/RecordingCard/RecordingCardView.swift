@@ -11,6 +11,7 @@ struct RecordingCardView: View {
   let queueInfo: RecordingCard.QueueInfo?
 
   @State var showItem = false
+  @State private var isShareSheetPresented = false
 
   var body: some View {
     WithPerceptionTracking {
@@ -35,8 +36,13 @@ struct RecordingCardView: View {
                 Image(systemName: "doc.on.clipboard")
               }
 
-              ShareLink(item: store.transcription) {
+              Button {
+                isShareSheetPresented = true
+              } label: {
                 Image(systemName: "paperplane")
+              }
+              .sheet(isPresented: $isShareSheetPresented) {
+                ActivityViewController(activityItems: [store.transcription])
               }
             }.iconButtonStyle()
           }

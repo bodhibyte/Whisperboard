@@ -3,7 +3,7 @@ import ProjectDescription
 
 public let version = "1.13.1"
 
-public let deploymentTargetString = "16.0"
+public let deploymentTargetString = "15.0"
 public let appDeploymentTargets: DeploymentTargets = .iOS(deploymentTargetString)
 public let appDestinations: Destinations = [.iPhone, .iPad]
 public let devTeam = "8A76N862C8"
