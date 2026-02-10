@@ -24,8 +24,9 @@ jobs:
         
       - name: Generate Project
         run: |
-          /Users/runner/.local/bin/mise x tuist -- install
-          /Users/runner/.local/bin/mise x tuist -- generate --no-open
+          /Users/runner/.local/bin/mise install
+          /Users/runner/.local/bin/mise exec -- tuist install
+          /Users/runner/.local/bin/mise exec -- tuist generate --no-open
         env:
             # CI environment variables if needed
             TUIST_CI: 1
