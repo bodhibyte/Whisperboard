@@ -292,7 +292,7 @@ let project = Project(
           .external(name: "Inject"),
           .external(name: "KeychainAccess"),
           .external(name: "Logging"),
-          .external(name: "Lottie"),
+
           .external(name: "NavigationTransitions"),
           .external(name: "OrderedCollections"),
           .external(name: "Popovers"),
@@ -391,10 +391,6 @@ let project = Project(
     .assets(),
     .fonts(),
     .strings(),
-    .custom(
-      name: "Lottie",
-      parser: .json,
-      extensions: ["lottie"]
-    ),
+
   ]
 )

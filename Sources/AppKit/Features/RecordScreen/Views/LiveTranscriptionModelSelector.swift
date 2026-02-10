@@ -1,7 +1,7 @@
 import Common
 import ComposableArchitecture
 import Inject
-import Lottie
+
 import Popovers
 import Pow
 import SwiftUI
@@ -80,11 +80,11 @@ struct LiveTranscriptionModelSelectorView: View {
           VStack(spacing: .grid(1)) {
             HStack {
               #if APPSTORE
-                LottieView(animation: AnimationAsset.wiredOutline2474SparklesGlitter.animation)
-                  .playing(loopMode: .autoReverse)
-                  .animationSpeed(0.3)
-                  .resizable()
-                  .frame(width: 24, height: 24)
+//                LottieView(animation: AnimationAsset.wiredOutline2474SparklesGlitter.animation)
+//                  .playing(loopMode: .autoReverse)
+//                  .animationSpeed(0.3)
+//                  .resizable()
+//                  .frame(width: 24, height: 24)
               #endif
 
               Text("Live Transcription")
@@ -201,11 +201,11 @@ struct LockedFeatureView: View {
     VStack(alignment: .leading, spacing: .grid(1)) {
       HStack(spacing: .grid(1)) {
         #if APPSTORE
-          LottieView(animation: AnimationAsset.wiredOutline2474SparklesGlitter.animation)
-            .playing(loopMode: .autoReverse)
-            .animationSpeed(0.3)
-            .resizable()
-            .frame(width: 24, height: 24)
+//          LottieView(animation: AnimationAsset.wiredOutline2474SparklesGlitter.animation)
+//            .playing(loopMode: .autoReverse)
+//            .animationSpeed(0.3)
+//            .resizable()
+//            .frame(width: 24, height: 24)
         #endif
 
         Text(title)
