@@ -36,7 +36,7 @@ final class ShareViewController: UIViewController {
       return nil
     }
 
-    let sharedFolderURL = groupFolderURL.appending(component: "share")
+    let sharedFolderURL = groupFolderURL.appendingPathComponent("share")
     return ShareViewModel(sharedFolderURL: sharedFolderURL)
   }()
 
@@ -155,10 +155,10 @@ struct ShareView: View {
           VStack(spacing: 16) {
             if viewModel.isSuccess {
               Text("Done!")
-                .transition(.push(from: .top))
+                .transition(.move(edge: .top))
               ForEach(viewModel.sharedFileNames, id: \.self) { fileName in
                 Text(fileName)
-                  .transition(.push(from: .top))
+                  .transition(.move(edge: .top))
                   .font(.body)
               }
             } else {
@@ -263,9 +263,9 @@ class ShareViewModel: ObservableObject {
   private func handleLoadedData(_ currentURL: URL) async throws {
     print("Found URL \(currentURL)")
     let audioFileName = currentURL.pathComponents.last ?? newFileName()
-    var newURL = sharedFolderURL.appending(component: audioFileName).deletingPathExtension().appendingPathExtension("wav")
+    var newURL = sharedFolderURL.appendingPathComponent(audioFileName).deletingPathExtension().appendingPathExtension("wav")
     while FileManager.default.fileExists(atPath: newURL.path) {
-      newURL = sharedFolderURL.appending(component: newURL.deletingPathExtension().lastPathComponent + "_1").appendingPathExtension("wav")
+      newURL = sharedFolderURL.appendingPathComponent(newURL.deletingPathExtension().lastPathComponent + "_1").appendingPathExtension("wav")
     }
     try await importFile(currentURL, newURL)
     sharedFileNames.append(newURL.deletingPathExtension().lastPathComponent)
