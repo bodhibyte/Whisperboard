@@ -10,7 +10,7 @@ import WhisperKit
 // MARK: - TranscriptionStream
 
 public actor TranscriptionStream {
-  public static let modelDirURL: URL = .documentsDirectory.appendingPathComponent("huggingface/models/argmaxinc/whisperkit-coreml")
+  public static let modelDirURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("huggingface/models/argmaxinc/whisperkit-coreml")
 
   public struct State {
     public var currentFallbacks: Int = 0

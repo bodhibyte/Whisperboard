@@ -167,7 +167,7 @@ private actor RecordingTranscriptionStreamContainer {
   }
 
   func deleteAllModels() async throws {
-    let modelDirectoryURL = URL.documentsDirectory.appendingPathComponent("models")
+    let modelDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("models")
     try? FileManager.default.removeItem(at: modelDirectoryURL)
     let newModelsPath = await transcriptionStream.state.localModelPath
     try? FileManager.default.removeItem(atPath: newModelsPath)

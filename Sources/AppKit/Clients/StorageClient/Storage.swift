@@ -92,7 +92,7 @@ final class Storage {
         for file in try FileManager.default.contentsOfDirectory(atPath: containerGroupURL.path) {
           let sourceURL = containerGroupURL.appendingPathComponent(file)
           let newFileName = UUID().uuidString + ".wav"
-          let destinationURL = docURL.appending(path: newFileName)
+          let destinationURL = docURL.appendingPathComponent(newFileName)
           try FileManager.default.moveItem(at: sourceURL, to: destinationURL)
           let duration = try await getFileDuration(url: destinationURL)
           let recording = RecordingInfo(

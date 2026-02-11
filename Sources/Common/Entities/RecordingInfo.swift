@@ -74,11 +74,11 @@ extension RecordingInfo: Codable {
 
 public extension RecordingInfo {
   var fileURL: URL {
-    Configs.recordingsDirectoryURL.appending(path: fileName)
+    Configs.recordingsDirectoryURL.appendingPathComponent(fileName)
   }
 
   var waveformImageURL: URL {
-    Configs.recordingsDirectoryURL.appending(path: fileName + ".waveform.png")
+    Configs.recordingsDirectoryURL.appendingPathComponent(fileName + ".waveform.png")
   }
 }
 
