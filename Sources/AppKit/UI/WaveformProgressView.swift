@@ -174,7 +174,7 @@ struct WaveformProgressView: View {
     static var previews: some View {
       NavigationView {
         WaveformProgressView(
-          store: Store(initialState: WaveformProgress.State(audioFileURL: .documentsDirectory, waveformImageURL: .documentsDirectory, duration: 10)) {
+          store: Store(initialState: WaveformProgress.State(audioFileURL: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!, waveformImageURL: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!, duration: 10)) {
             WaveformProgress()
           }
         )

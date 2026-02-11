@@ -69,7 +69,7 @@ extension StorageClient: DependencyKey {
             logs.info("Uploading file: \(fileName), readable name: \(readableFileName)")
 
             let source = recording.fileURL
-            let destination = iCloudURL.appending(path: readableFileName)
+            let destination = iCloudURL.appendingPathComponent(readableFileName)
 
             if !uploadedFiles.contains(fileName) {
               do {
@@ -93,7 +93,7 @@ extension StorageClient: DependencyKey {
 
   private static func totalDiskSpaceInBytes() -> UInt64 {
     do {
-      let fileURL: URL = .documentsDirectory
+      let fileURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
       let values = try fileURL.resourceValues(forKeys: [.volumeTotalCapacityKey])
       let capacity = values.volumeAvailableCapacityForImportantUsage
       return UInt64(capacity ?? 0)
@@ -105,7 +105,7 @@ extension StorageClient: DependencyKey {
 
   private static func freeDiskSpaceInBytes() -> UInt64 {
     do {
-      let fileURL: URL = .documentsDirectory
+      let fileURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
       let values = try fileURL.resourceValues(forKeys: [.volumeAvailableCapacityForImportantUsageKey])
       let capacity = values.volumeAvailableCapacityForImportantUsage
       return UInt64(capacity ?? 0)
@@ -117,7 +117,7 @@ extension StorageClient: DependencyKey {
 
   private static func takenSpace() -> UInt64 {
     do {
-      let fileURL: URL = .documentsDirectory
+      let fileURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
       let capacity = try fileURL.directoryTotalAllocatedSize(includingSubfolders: true)
       return UInt64(capacity ?? 0)
     } catch {
@@ -127,7 +127,7 @@ extension StorageClient: DependencyKey {
   }
 
   private static func deleteStorage(_ storage: Storage) async throws {
-    let fileURL: URL = .documentsDirectory
+    let fileURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     let contents = try FileManager.default.contentsOfDirectory(at: fileURL, includingPropertiesForKeys: nil, options: [])
     for item in contents where item.pathExtension == "wav" {
       try FileManager.default.removeItem(at: item)

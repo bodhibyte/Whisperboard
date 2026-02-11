@@ -9,6 +9,6 @@ public struct DebugSettings: Codable, Hashable {
 
 public extension PersistenceReaderKey where Self == PersistenceKeyDefault<FileStorageKey<DebugSettings>> {
   static var debugSettings: Self {
-    PersistenceKeyDefault(.fileStorage(.documentsDirectory.appending(component: "debugSettings.json")), DebugSettings())
+    PersistenceKeyDefault(.fileStorage(URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]).appendingPathComponent("debugSettings.json")), DebugSettings())
   }
 }

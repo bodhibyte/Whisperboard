@@ -15,6 +15,6 @@ public enum PremiumFeaturesProductID {
 
 public extension PersistenceReaderKey where Self == PersistenceKeyDefault<FileStorageKey<PremiumFeaturesStatus>> {
   static var premiumFeatures: Self {
-    PersistenceKeyDefault(.fileStorage(.documentsDirectory.appending(component: "premiumFeatures.json")), PremiumFeaturesStatus())
+    PersistenceKeyDefault(.fileStorage(URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]).appendingPathComponent("premiumFeatures.json")), PremiumFeaturesStatus())
   }
 }

@@ -8,7 +8,7 @@ import UIKit
 final class Storage {
   static var containerGroupURL: URL? {
     let appGroupName = "group.whisperboard"
-    return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupName)?.appending(component: "share")
+    return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupName)?.appendingPathComponent("share")
   }
 
   private var currentlyRecordingURL: URL?
@@ -116,7 +116,7 @@ final class Storage {
 
   private func createInfo(fileName: String) async throws -> RecordingInfo {
     let docURL = Configs.recordingsDirectoryURL
-    let fileURL = docURL.appending(component: fileName)
+    let fileURL = docURL.appendingPathComponent(fileName)
     let attributes = try FileManager.default.attributesOfItem(atPath: fileURL.path)
     let date = attributes[.creationDate] as? Date ?? Date()
     let duration = try await getFileDuration(url: fileURL)

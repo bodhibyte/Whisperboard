@@ -3,7 +3,7 @@ import ComposableArchitecture
 
 public extension PersistenceReaderKey where Self == PersistenceKeyDefault<FileStorageKey<IdentifiedArrayOf<RecordingInfo>>> {
   static var recordings: Self {
-    PersistenceKeyDefault(.fileStorage(.documentsDirectory.appending(component: "recordings.json")), [])
+    PersistenceKeyDefault(.fileStorage(URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]).appendingPathComponent("recordings.json")), [])
   }
 }
 
@@ -21,6 +21,6 @@ public extension PersistenceReaderKey where Self == PersistenceKeyDefault<InMemo
 
 public extension PersistenceReaderKey where Self == FileStorageKey<Settings> {
   static var settings: Self {
-    .fileStorage(.documentsDirectory.appending(component: "settings.json"))
+    .fileStorage(URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]).appendingPathComponent("settings.json"))
   }
 }

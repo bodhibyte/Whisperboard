@@ -151,7 +151,7 @@ struct SettingsScreen {
         state.settings.selectedModelName = WhisperKit.recommendedModels().default
         return .run { send in
           try? FileManager.default.removeItem(at: TranscriptionStream.modelDirURL)
-          try? FileManager.default.removeItem(at: .documentsDirectory.appendingPathComponent("models"))
+          try? FileManager.default.removeItem(at: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("models"))
           await send(.updateInfo)
           await send(.modelSelector(.reloadModels))
         } catch: { error, send in
