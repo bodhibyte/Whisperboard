@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: macos-15
+    env:
+      GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -20,11 +22,12 @@ jobs:
           
       - name: Install Dependencies
         run: |
-          /Users/runner/.local/bin/mise install
+          /Users/runner/.local/bin/mise install tuist@4.142.1
         
       - name: Generate Project
         run: |
-          /Users/runner/.local/bin/mise install
+          /Users/runner/.local/bin/mise install tuist@4.142.1
+          sh ./ci_scripts/secrets.sh
           /Users/runner/.local/bin/mise exec -- tuist install
           /Users/runner/.local/bin/mise exec -- tuist generate --no-open
         env:

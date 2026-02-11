@@ -1,0 +1,190 @@
+build	Set up job	﻿2026-02-11T00:47:32.5232020Z Current runner version: '2.331.0'
+build	Set up job	2026-02-11T00:47:32.5267360Z ##[group]Runner Image Provisioner
+build	Set up job	2026-02-11T00:47:32.5268120Z Hosted Compute Agent
+build	Set up job	2026-02-11T00:47:32.5268500Z Version: 20260123.484
+build	Set up job	2026-02-11T00:47:32.5269760Z Commit: 6bd6555ca37d84114959e1c76d2c01448ff61c5d
+build	Set up job	2026-02-11T00:47:32.5270200Z Build Date: 2026-01-23T19:41:17Z
+build	Set up job	2026-02-11T00:47:32.5270610Z Worker ID: {c8012aad-5ffa-43f6-aa27-4e0963056a03}
+build	Set up job	2026-02-11T00:47:32.5271030Z Azure Region: westus
+build	Set up job	2026-02-11T00:47:32.5271370Z ##[endgroup]
+build	Set up job	2026-02-11T00:47:32.5272340Z ##[group]Operating System
+build	Set up job	2026-02-11T00:47:32.5272710Z macOS
+build	Set up job	2026-02-11T00:47:32.5273580Z 15.7.3
+build	Set up job	2026-02-11T00:47:32.5273870Z 24G419
+build	Set up job	2026-02-11T00:47:32.5274190Z ##[endgroup]
+build	Set up job	2026-02-11T00:47:32.5274510Z ##[group]Runner Image
+build	Set up job	2026-02-11T00:47:32.5274830Z Image: macos-15-arm64
+build	Set up job	2026-02-11T00:47:32.5275140Z Version: 20260127.0129.1
+build	Set up job	2026-02-11T00:47:32.5275880Z Included Software: https://github.com/actions/runner-images/blob/macos-15-arm64/20260127.0129/images/macos/macos-15-arm64-Readme.md
+build	Set up job	2026-02-11T00:47:32.5276980Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-15-arm64%2F20260127.0129
+build	Set up job	2026-02-11T00:47:32.5277570Z ##[endgroup]
+build	Set up job	2026-02-11T00:47:32.5280260Z ##[group]GITHUB_TOKEN Permissions
+build	Set up job	2026-02-11T00:47:32.5281720Z Actions: write
+build	Set up job	2026-02-11T00:47:32.5282440Z ArtifactMetadata: write
+build	Set up job	2026-02-11T00:47:32.5282850Z Attestations: write
+build	Set up job	2026-02-11T00:47:32.5283170Z Checks: write
+build	Set up job	2026-02-11T00:47:32.5283480Z Contents: write
+build	Set up job	2026-02-11T00:47:32.5283790Z Deployments: write
+build	Set up job	2026-02-11T00:47:32.5284110Z Discussions: write
+build	Set up job	2026-02-11T00:47:32.5284410Z Issues: write
+build	Set up job	2026-02-11T00:47:32.5284700Z Metadata: read
+build	Set up job	2026-02-11T00:47:32.5285060Z Models: read
+build	Set up job	2026-02-11T00:47:32.5285390Z Packages: write
+build	Set up job	2026-02-11T00:47:32.5285710Z Pages: write
+build	Set up job	2026-02-11T00:47:32.5286060Z PullRequests: write
+build	Set up job	2026-02-11T00:47:32.5286390Z RepositoryProjects: write
+build	Set up job	2026-02-11T00:47:32.5286750Z SecurityEvents: write
+build	Set up job	2026-02-11T00:47:32.5287080Z Statuses: write
+build	Set up job	2026-02-11T00:47:32.5287380Z ##[endgroup]
+build	Set up job	2026-02-11T00:47:32.5288720Z Secret source: Actions
+build	Set up job	2026-02-11T00:47:32.5289140Z Prepare workflow directory
+build	Set up job	2026-02-11T00:47:32.5825050Z Prepare all required actions
+build	Set up job	2026-02-11T00:47:32.5976710Z Getting action download info
+build	Set up job	2026-02-11T00:47:32.9794230Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+build	Set up job	2026-02-11T00:47:34.6756990Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+build	Set up job	2026-02-11T00:47:34.9702370Z Complete job name: build
+build	Run actions/checkout@v4	﻿2026-02-11T00:47:35.0547680Z ##[group]Run actions/checkout@v4
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0548650Z with:
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0549020Z   lfs: true
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0549350Z   repository: bodhibyte/Whisperboard
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0550090Z   token: ***
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0550400Z   ssh-strict: true
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0550750Z   ssh-user: git
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0551080Z   persist-credentials: true
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0551430Z   clean: true
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0553700Z   sparse-checkout-cone-mode: true
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0554140Z   fetch-depth: 1
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0554470Z   fetch-tags: false
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0554820Z   show-progress: true
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0555210Z   submodules: false
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0555580Z   set-safe-directory: true
+build	Run actions/checkout@v4	2026-02-11T00:47:35.0556340Z ##[endgroup]
+build	Run actions/checkout@v4	2026-02-11T00:47:35.4732910Z Syncing repository: bodhibyte/Whisperboard
+build	Run actions/checkout@v4	2026-02-11T00:47:35.4747500Z ##[group]Getting Git version info
+build	Run actions/checkout@v4	2026-02-11T00:47:35.4773260Z Working directory is '/Users/runner/work/Whisperboard/Whisperboard'
+build	Run actions/checkout@v4	2026-02-11T00:47:35.4775280Z [command]/opt/homebrew/bin/git version
+build	Run actions/checkout@v4	2026-02-11T00:47:35.5582980Z git version 2.52.0
+build	Run actions/checkout@v4	2026-02-11T00:47:35.5685220Z [command]/opt/homebrew/bin/git lfs version
+build	Run actions/checkout@v4	2026-02-11T00:47:35.7098100Z git-lfs/3.7.1 (GitHub; darwin arm64; go 1.25.3)
+build	Run actions/checkout@v4	2026-02-11T00:47:35.7115160Z ##[endgroup]
+build	Run actions/checkout@v4	2026-02-11T00:47:35.7129700Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/d81ea321-0b0d-4215-a98b-dcb42d6f27b9/.gitconfig'
+build	Run actions/checkout@v4	2026-02-11T00:47:35.7141960Z Temporarily overriding HOME='/Users/runner/work/_temp/d81ea321-0b0d-4215-a98b-dcb42d6f27b9' before making global git config changes
+build	Run actions/checkout@v4	2026-02-11T00:47:35.7145840Z Adding repository directory to the temporary git global config as a safe directory
+build	Run actions/checkout@v4	2026-02-11T00:47:35.7149350Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/Whisperboard/Whisperboard
+build	Run actions/checkout@v4	2026-02-11T00:47:35.7255220Z Deleting the contents of '/Users/runner/work/Whisperboard/Whisperboard'
+build	Run actions/checkout@v4	2026-02-11T00:47:35.7258240Z ##[group]Initializing the repository
+build	Run actions/checkout@v4	2026-02-11T00:47:35.7260860Z [command]/opt/homebrew/bin/git init /Users/runner/work/Whisperboard/Whisperboard
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8017310Z hint: Using 'master' as the name for the initial branch. This default branch name
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8019520Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8021310Z hint: to use in all of your new repositories, which will suppress this warning,
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8022730Z hint: call:
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8023510Z hint:
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8024560Z hint: 	git config --global init.defaultBranch <name>
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8025740Z hint:
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8026750Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8028420Z hint: 'development'. The just-created branch can be renamed via this command:
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8029920Z hint:
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8030680Z hint: 	git branch -m <name>
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8031530Z hint:
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8032620Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8087380Z Initialized empty Git repository in /Users/runner/work/Whisperboard/Whisperboard/.git/
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8102580Z [command]/opt/homebrew/bin/git remote add origin https://github.com/bodhibyte/Whisperboard
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8214280Z ##[endgroup]
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8220100Z ##[group]Disabling automatic garbage collection
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8236530Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8326180Z ##[endgroup]
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8331170Z ##[group]Setting up auth
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8334470Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Run actions/checkout@v4	2026-02-11T00:47:35.8408010Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Run actions/checkout@v4	2026-02-11T00:47:35.9966210Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Run actions/checkout@v4	2026-02-11T00:47:36.0070030Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Run actions/checkout@v4	2026-02-11T00:47:36.1819860Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	Run actions/checkout@v4	2026-02-11T00:47:36.2183730Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	Run actions/checkout@v4	2026-02-11T00:47:36.3673310Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	Run actions/checkout@v4	2026-02-11T00:47:36.3794890Z ##[endgroup]
+build	Run actions/checkout@v4	2026-02-11T00:47:36.3807480Z [command]/opt/homebrew/bin/git lfs install --local
+build	Run actions/checkout@v4	2026-02-11T00:47:36.6166250Z Updated Git hooks.
+build	Run actions/checkout@v4	2026-02-11T00:47:36.6170090Z Git LFS initialized.
+build	Run actions/checkout@v4	2026-02-11T00:47:36.6236030Z ##[group]Fetching the repository
+build	Run actions/checkout@v4	2026-02-11T00:47:36.6244790Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ffd58fe8840d69f1cc9e41e77fbfb620c34f48ee:refs/remotes/origin/main
+build	Run actions/checkout@v4	2026-02-11T00:47:37.6736640Z From https://github.com/bodhibyte/Whisperboard
+build	Run actions/checkout@v4	2026-02-11T00:47:37.6739630Z  * [new ref]         ffd58fe8840d69f1cc9e41e77fbfb620c34f48ee -> origin/main
+build	Run actions/checkout@v4	2026-02-11T00:47:37.6860030Z ##[endgroup]
+build	Run actions/checkout@v4	2026-02-11T00:47:37.6861620Z ##[group]Determining the checkout info
+build	Run actions/checkout@v4	2026-02-11T00:47:37.6864830Z ##[endgroup]
+build	Run actions/checkout@v4	2026-02-11T00:47:37.6865500Z ##[group]Fetching LFS objects
+build	Run actions/checkout@v4	2026-02-11T00:47:37.6866210Z [command]/opt/homebrew/bin/git lfs fetch origin refs/remotes/origin/main
+build	Run actions/checkout@v4	2026-02-11T00:47:37.8048920Z Fetching reference refs/remotes/origin/main
+build	Run actions/checkout@v4	2026-02-11T00:47:37.8738110Z ##[endgroup]
+build	Run actions/checkout@v4	2026-02-11T00:47:37.8740730Z [command]/opt/homebrew/bin/git sparse-checkout disable
+build	Run actions/checkout@v4	2026-02-11T00:47:37.8832250Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+build	Run actions/checkout@v4	2026-02-11T00:47:37.8900420Z ##[group]Checking out the ref
+build	Run actions/checkout@v4	2026-02-11T00:47:37.8908830Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+build	Run actions/checkout@v4	2026-02-11T00:47:38.0590340Z Switched to a new branch 'main'
+build	Run actions/checkout@v4	2026-02-11T00:47:38.0591840Z branch 'main' set up to track 'origin/main'.
+build	Run actions/checkout@v4	2026-02-11T00:47:38.2527290Z ##[endgroup]
+build	Run actions/checkout@v4	2026-02-11T00:47:38.2611930Z [command]/opt/homebrew/bin/git log -1 --format=%H
+build	Run actions/checkout@v4	2026-02-11T00:47:38.2659530Z ffd58fe8840d69f1cc9e41e77fbfb620c34f48ee
+build	Install mise	﻿2026-02-11T00:47:38.2864590Z ##[group]Run curl https://mise.jdx.dev/install.sh | sh
+build	Install mise	2026-02-11T00:47:38.2865080Z [36;1mcurl https://mise.jdx.dev/install.sh | sh[0m
+build	Install mise	2026-02-11T00:47:38.2865340Z [36;1mecho "$HOME/.local/bin" >> $GITHUB_PATH[0m
+build	Install mise	2026-02-11T00:47:38.2909070Z shell: /bin/bash -e {0}
+build	Install mise	2026-02-11T00:47:38.2909260Z ##[endgroup]
+build	Install mise	2026-02-11T00:47:38.3468770Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+build	Install mise	2026-02-11T00:47:38.3469720Z                                  Dload  Upload   Total   Spent    Left  Speed
+build	Install mise	2026-02-11T00:47:38.3471280Z 
+build	Install mise	2026-02-11T00:47:38.3865730Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+build	Install mise	2026-02-11T00:47:38.3874770Z 100 10371  100 10371    0     0   254k      0 --:--:-- --:--:-- --:--:--  259k
+build	Install mise	2026-02-11T00:47:38.4137260Z mise: installing mise...
+build	Install mise	2026-02-11T00:47:38.5220970Z 
+build	Install mise	2026-02-11T00:47:38.6227710Z                                                                            1.3%
+build	Install mise	2026-02-11T00:47:38.7040420Z #############################################                             62.6%
+build	Install mise	2026-02-11T00:47:38.7156310Z ######################################################################## 100.0%
+build	Install mise	2026-02-11T00:47:39.0725620Z mise: installed successfully to /Users/runner/.local/bin/mise
+build	Install mise	2026-02-11T00:47:39.0726260Z mise: run the following to activate mise in your shell:
+build	Install mise	2026-02-11T00:47:39.0726630Z echo "eval \"\$(/Users/runner/.local/bin/mise activate bash)\"" >> ~/.bashrc
+build	Install mise	2026-02-11T00:47:39.0727010Z 
+build	Install mise	2026-02-11T00:47:39.0727900Z mise: run `mise doctor` to verify this is set up correctly
+build	Install Dependencies	﻿2026-02-11T00:47:39.0769760Z ##[group]Run /Users/runner/.local/bin/mise install
+build	Install Dependencies	2026-02-11T00:47:39.0770190Z [36;1m/Users/runner/.local/bin/mise install[0m
+build	Install Dependencies	2026-02-11T00:47:39.0806830Z shell: /bin/bash -e {0}
+build	Install Dependencies	2026-02-11T00:47:39.0807100Z ##[endgroup]
+build	Install Dependencies	2026-02-11T00:47:39.1859360Z [2mmise[0m plugin:[34mpython[0m   clone https://github.com/asdf-community/asdf-tuist
+build	Install Dependencies	2026-02-11T00:47:40.1214060Z [2mmise[0m plugin:[34mpython[0m [38;5;10m✓[0m https://github.com/asdf-community/asdf-tuist#[38;5;11m44c87b2[0m
+build	Install Dependencies	2026-02-11T00:47:41.0182320Z [2mmise[0m [34mswiftformat[0m@0.59.1 [1/3] install
+build	Install Dependencies	2026-02-11T00:47:41.0214770Z [2mmise[0m [34mswiftlint[0m@0.63.2 [1/3] install
+build	Install Dependencies	2026-02-11T00:47:41.0215560Z [2mmise[0m [34mtuist[0m@4.142.1   [1/3] install
+build	Install Dependencies	2026-02-11T00:47:41.0407280Z [33mmise[0m [33mWARN[0m  GitHub rate limit exceeded. Resets at 2026-02-11 00:52:04 +00:00
+build	Install Dependencies	2026-02-11T00:47:41.0432920Z [33mmise[0m [33mWARN[0m  GitHub rate limit exceeded. Resets at 2026-02-11 00:52:04 +00:00
+build	Install Dependencies	2026-02-11T00:47:41.0436870Z [33mmise[0m [33mWARN[0m  [realm/SwiftLint] failed to fetch version tags, URL may be incorrect: HTTP status client error (403 rate limit exceeded) for url (https://api.github.com/repos/realm/SwiftLint/releases)
+build	Install Dependencies	2026-02-11T00:47:41.0459610Z [33mmise[0m [33mWARN[0m  GitHub rate limit exceeded. Resets at 2026-02-11 00:52:04 +00:00
+build	Install Dependencies	2026-02-11T00:47:41.0460680Z [33mmise[0m [33mWARN[0m  [tuist/tuist] failed to fetch version tags, URL may be incorrect: HTTP status client error (403 rate limit exceeded) for url (https://api.github.com/repos/tuist/tuist/releases)
+build	Install Dependencies	2026-02-11T00:47:41.0469720Z [33mmise[0m [33mWARN[0m  GitHub rate limit exceeded. Resets at 2026-02-11 00:52:04 +00:00
+build	Install Dependencies	2026-02-11T00:47:41.0498060Z [33mmise[0m [33mWARN[0m  GitHub rate limit exceeded. Resets at 2026-02-11 00:52:04 +00:00
+build	Install Dependencies	2026-02-11T00:47:41.0500280Z [33mmise[0m [33mWARN[0m  GitHub rate limit exceeded. Resets at 2026-02-11 00:52:04 +00:00
+build	Install Dependencies	2026-02-11T00:47:41.0524430Z [33mmise[0m [33mWARN[0m  GitHub rate limit exceeded. Resets at 2026-02-11 00:52:04 +00:00
+build	Install Dependencies	2026-02-11T00:47:41.0716730Z [31mmise[0m [31mERROR[0m Failed to install tools: aqua:realm/SwiftLint@latest, aqua:tuist/tuist@latest, github:nicklockwood/SwiftFormat[rename_exe=swiftformat,no_app=true]@latest
+build	Install Dependencies	2026-02-11T00:47:41.0718370Z 
+build	Install Dependencies	2026-02-11T00:47:41.0720550Z aqua:realm/SwiftLint@latest: HTTP status client error (403 rate limit exceeded) for url (https://api.github.com/repos/realm/SwiftLint/releases/tags/0.63.2): HTTP status client error (403 rate limit exceeded) for url (https://api.github.com/repos/realm/SwiftLint/releases/tags/v0.63.2)
+build	Install Dependencies	2026-02-11T00:47:41.0723160Z 
+build	Install Dependencies	2026-02-11T00:47:41.0725110Z aqua:tuist/tuist@latest: HTTP status client error (403 rate limit exceeded) for url (https://api.github.com/repos/tuist/tuist/releases/tags/4.142.1): HTTP status client error (403 rate limit exceeded) for url (https://api.github.com/repos/tuist/tuist/releases/tags/v4.142.1)
+build	Install Dependencies	2026-02-11T00:47:41.0729310Z 
+build	Install Dependencies	2026-02-11T00:47:41.0730140Z github:nicklockwood/SwiftFormat[rename_exe=swiftformat,no_app=true]@latest: HTTP status client error (403 rate limit exceeded) for url (https://api.github.com/repos/nicklockwood/SwiftFormat/releases/tags/v0.59.1)
+build	Install Dependencies	2026-02-11T00:47:41.0731290Z [31mmise[0m [31mERROR[0m [2mRun with --verbose or MISE_VERBOSE=1 for more information[0m
+build	Install Dependencies	2026-02-11T00:47:41.0746940Z ##[error]Process completed with exit code 1.
+build	Post Run actions/checkout@v4	﻿2026-02-11T00:47:41.0941300Z Post job cleanup.
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.2441180Z [command]/opt/homebrew/bin/git version
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.2508870Z git version 2.52.0
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.2530670Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/ce68d2c6-63c2-4d17-8ad8-e4f5b1ecb67e/.gitconfig'
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.2545970Z Temporarily overriding HOME='/Users/runner/work/_temp/ce68d2c6-63c2-4d17-8ad8-e4f5b1ecb67e' before making global git config changes
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.2546590Z Adding repository directory to the temporary git global config as a safe directory
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.2557720Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/Whisperboard/Whisperboard
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.2633020Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.2701770Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.3628180Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.3682240Z http.https://github.com/.extraheader
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.3691950Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.3782180Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.4688090Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	Post Run actions/checkout@v4	2026-02-11T00:47:41.4751110Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	Complete job	﻿2026-02-11T00:47:41.6496390Z Cleaning up orphan processes
